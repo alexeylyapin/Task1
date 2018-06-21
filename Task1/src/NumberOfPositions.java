@@ -1,9 +1,13 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+The implementation of program logic is in this class
+*/
+
 public class NumberOfPositions {
 
-    public ArrayList<Integer> catalanNumber  = new ArrayList<>();
+    private ArrayList<Integer> catalanNumber  = new ArrayList<>();
     private int numberOfBrackets;
 
     //Constructor
@@ -14,6 +18,7 @@ public class NumberOfPositions {
     * For implementation task use the Catalan's recurrence relation.
     **/
         public  int calculateNumberOfPosition() {
+
              catalanNumber.add(1);
              int sum;
              for (int i = 1; i <= numberOfBrackets; ++i) {
@@ -30,21 +35,22 @@ public class NumberOfPositions {
      * User must input only a positive integer number.
      */
      private int readNumber() {
-         int inputNumber = 0;
+
+         int enteredNumber;
          Scanner scanner = new Scanner(System.in);
          System.out.print("Enter the count of braces: ");
          while (true){
              try {
-                 inputNumber = Integer.parseInt(scanner.nextLine());
-                 if ((inputNumber < 0)) throw new IllegalArgumentException();
+                 enteredNumber = Integer.parseInt(scanner.nextLine());
+                 if ((enteredNumber < 0)) throw new IllegalArgumentException();
                      break;
              }catch (IllegalArgumentException ex){
                  System.err.println("Please input a positive number!");
-                 continue;
              }
          }
-             return inputNumber;
+             return enteredNumber;
      }
 }
+
 
 
